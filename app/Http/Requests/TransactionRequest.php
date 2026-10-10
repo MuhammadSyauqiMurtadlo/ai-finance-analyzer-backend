@@ -20,7 +20,7 @@ class TransactionRequest extends FormRequest
                 Transaction::TYPE_INCOME,
                 Transaction::TYPE_EXPENSE,
             ])],
-            'amount' => ['required', 'numeric', 'min:0.01'],
+            'amount' => ['required', 'numeric', 'min:0.01', 'max:9999999999999.99'],
             'category' => ['required', 'string', function ($attribute, $value, $fail) {
                 $type = $this->input('type');
                 $validCategories = Transaction::CATEGORIES[$type] ?? [];
