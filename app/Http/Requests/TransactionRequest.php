@@ -29,7 +29,7 @@ class TransactionRequest extends FormRequest
                     $fail("Kategori '{$value}' tidak valid untuk tipe '{$type}'.");
                 }
             }],
-            'date' => ['required', 'date'],
+            'date' => ['required', 'date_format:Y-m-d'],
             'note' => ['nullable', 'string', 'max:1000'],
         ];
     }
